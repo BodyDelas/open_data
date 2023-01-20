@@ -85,3 +85,7 @@ body {
       input:hover {
         background-color: #c5c5c5;
       }
+      
+      .error {
+        margin-top: 10px;
+      }

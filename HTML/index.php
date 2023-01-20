@@ -1,10 +1,22 @@
 <?php
 
+session_start();
+
 $icon_path = '../imgs/icon_auth.png';
+$auth_btn_text = 'Вход / Регистрация';
+$user_id = null;
+
+if (isset($_POST['out'])) {
+  unset($_SESSION['user_id']);
+}
 
 if (isset($_SESSION['user_id'])) {
   $icon_path = '../imgs/icon_acc.png';
+  $auth_btn_text = 'Выход';
+  $user_id = $_SESSION['user_id'];
 }
+
+echo $_SESSION['user_id'].'<br>';
 
 ?>
 
@@ -49,11 +61,12 @@ if (isset($_SESSION['user_id'])) {
         <div class="places">
         </div>
       </div>
-      <form action="auth.php" class="account" method="post">
+      <form action="<?php echo ($user_id == null)?'auth.php':'index.php'?>" class="account" method="post">
         <div class="accountIcon">
           <img class="iconAuth" src="<?=$icon_path?>" alt="Иконка входа">
         </div>
-        <button class="account_btn" name="account">Вход / Регистрация</button>
+        <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
+        <button class="account_btn" name="account"><?=$auth_btn_text?></button>
       </form>
     </div>
   </main>

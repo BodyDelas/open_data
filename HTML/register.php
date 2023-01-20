@@ -34,16 +34,14 @@ if (isset($_POST['reg'])) {
 
             session_start();
 
-            while ($row = mysqli_fetch_assoc($res)) {
+            while ($row = @mysqli_fetch_assoc($res)) {
                 $_SESSION['user_id'] = $row['id'];
             }
-            
-            //echo $_SESSION['user_id'].'<br>';
 
             header('Location: index.php');
-            // ob_end_flush();
+
         } else {
-            $error = '<div class="error">Такой логин уже существует</div>';
+            $error = '<div class="error">Заполните необходимые поля</div>';
         }
     }
 
@@ -52,9 +50,6 @@ if (isset($_POST['reg'])) {
 
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,14 +73,13 @@ if (isset($_POST['reg'])) {
       <h1 title="Форма регистрации на сайте">Регистрация</h1>
       <div class="group">
         <label for="login"></label>
-        <input type="text" placeholder="Логин" id="login" name="login" />
+        <input type="text" placeholder="Логин" name="login" />
       </div>
       <div class="group">
         <label for="password"></label>
         <input
           type="password"
           placeholder="Пароль"
-          id="password"
           name="password"
         />
       </div>
@@ -94,7 +88,6 @@ if (isset($_POST['reg'])) {
         <input
           type="password"
           placeholder="Повторите пароль"
-          id="password"
           name="password"
         />
       </div>
@@ -104,10 +97,10 @@ if (isset($_POST['reg'])) {
       </div>
       <div class="group">
         <button type="submit" name="reg">Зарегестрироваться</button>
+        <span><?=$error?></span>
       </div>
       </div>
     </form>
-    <?=$error?>
     </main>
     <footer>
       <span></span>
