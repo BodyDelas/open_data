@@ -7,20 +7,20 @@ $auth_btn_text = 'Вход / Регистрация';
 $user_id = null;
 
 if (isset($_POST['out'])) {
+  // echo 'out = '.$_POST['out'];
   unset($_SESSION['user_id']);
 }
 
 if (isset($_SESSION['user_id'])) {
+  // echo 'uid = '.$_SESSION['user_id'];
   $icon_path = '../imgs/icon_acc.png';
   $auth_btn_text = 'Выход';
   $user_id = $_SESSION['user_id'];
 }
 
-echo $_SESSION['user_id'].'<br>';
+// echo $_SESSION['user_id'].'<br>';
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,6 +37,7 @@ echo $_SESSION['user_id'].'<br>';
   <body>
     <header>
       <span>ZOO WALKING</span>
+      <p>Мы поможем найти подходящую площдку рядом с вами</p>
     </header>
     <main>
     <div class="container">
@@ -64,9 +65,9 @@ echo $_SESSION['user_id'].'<br>';
       <form action="<?php echo ($user_id == null)?'auth.php':'index.php'?>" class="account" method="post">
         <div class="accountIcon">
           <img class="iconAuth" src="<?=$icon_path?>" alt="Иконка входа">
-        </div>
         <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
         <button class="account_btn" name="account"><?=$auth_btn_text?></button>
+        </div>
       </form>
     </div>
   </main>

@@ -1,3 +1,38 @@
+<?php
+
+session_start();
+
+$error = '';
+include "connect_db.php";
+
+if (isset($_POST['enter'])) {
+    // echo 1;
+    $login = trim($_POST['login']);
+    $hash = md5($_POST['password']);
+
+    // echo $login.' '.$hash;
+
+    $response = mysqli_query($connection, "
+        select * from user
+    ");
+
+    while ($row = mysqli_fetch_assoc($response)) {
+        // echo $hash.' '.$row['hash'].' '.$login.' '.$row['login'].'<br>';
+        if ($hash == $row['hash'] && $login == $row['login']) {
+            // echo 11;
+            $_SESSION['user_id'] = $row['id'];
+
+            header('Location: index.php');
+
+        }
+    }
+
+    $error = '<div class="error group">Неверный логин или пароль</div>';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,36 +51,40 @@
       <span>ZOO WALKING</span>
     </header>
     <main>
-        <form action="" method="post">
-            <div class="auth">
-                <div>
+    
+        
+        <div class="auth">
+            <form method="post">
                 <h1 title="Форма входа на сайт">Вход</h1>
                     <div class="group">
-                     <label for="login"></label>
-                        <input type="text" placeholder="Логин" id="login" name="Login" />
+                        <label for="login"></label>
+                        <input type="text" placeholder="Логин" id="login" name="login" />
                     </div>
                 <div class="group">
                     <label for="password"></label>
-                         <input type="password" placeholder="Пароль" id="password" name="password"/>
-                 </div>
+                    <input type="password" placeholder="Пароль" id="password" name="password"/>
+                </div>
                 <div class="group">
                     <input type="checkbox" id="rememberMe" name="rememberMe" />
-                        <span>Запомнить меня</span>
-                 </div>
-                <div class="group">
-                    <button class="btn_auth" type="submit">Войти</button>
-                 </div>
+                    <span>Запомнить меня</span>
                 </div>
-                </form>
-                <form action="register.php" method="post">
+                <div class="group">
+                    <button class="btn_auth" type="submit" name="enter">Войти</button>
+                </div>
+                <?=$error?>
+            </form>
+            <form action="register.php" method="post">
                 <div class="text">
                     <span class="text1">У вас ещё нет аккаунта?</span>
                     <div class="group">
-                    <button class="btn_reg" type="submit">Зарегестрироваться</button>
-                 </div>
+                        <button class="btn_reg" type="submit">Зарегестрироваться</button>
+                    </div>
                 </div>
-            <div>
-        <form>   
+            </form>
+         </div>
+           
+        
+        
     </main>
     <footer>
       <span></span>

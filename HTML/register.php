@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include 'connect_db.php';
 
@@ -29,14 +30,14 @@ if (isset($_POST['reg'])) {
 
             $res = mysqli_query($connection, "
                 select id from user
-                where login = ".$login."
+                where login = '".$login."'
             ");
 
-            session_start();
-
-            while ($row = @mysqli_fetch_assoc($res)) {
-                $_SESSION['user_id'] = $row['id'];
-            }
+            $row = @mysqli_fetch_assoc($res);
+            
+            //echo 'row[id] = '.$row['id'];
+            $_SESSION['user_id'] = $row['id'];
+            
 
             header('Location: index.php');
 
@@ -68,39 +69,31 @@ if (isset($_POST['reg'])) {
       <span>ZOO WALKING</span>
     </header>
     <main>
-    <form method="post">
     <div class="auth">
-      <h1 title="Форма регистрации на сайте">Регистрация</h1>
-      <div class="group">
-        <label for="login"></label>
-        <input type="text" placeholder="Логин" name="login" />
-      </div>
-      <div class="group">
-        <label for="password"></label>
-        <input
-          type="password"
-          placeholder="Пароль"
-          name="password"
-        />
-      </div>
-      <div class="group">
-        <label for="password"></label>
-        <input
-          type="password"
-          placeholder="Повторите пароль"
-          name="password"
-        />
-      </div>
-      <div class="group">
-        <input type="checkbox" id="rememberMe" name="rememberMe" />
-        <span>Запомнить меня</span>
-      </div>
-      <div class="group">
-        <button type="submit" name="reg">Зарегестрироваться</button>
-        <span><?=$error?></span>
-      </div>
-      </div>
-    </form>
+        <form method="post">
+        <h1 title="Форма регистрации на сайте">Регистрация</h1>
+            <div class="group">
+                <label for="login"></label>
+                <input type="text" placeholder="Логин" name="login" />
+            </div>
+            <div class="group">
+                <label for="password"></label>
+                <input type="password" placeholder="Пароль" name="password"/>
+            </div>
+            <div class="group">
+                <label for="password"></label>
+                <input type="password" placeholder="Повторите пароль" name="password"/>
+            </div>
+            <div class="group">
+                <input type="checkbox" id="rememberMe" name="rememberMe" />
+                <span>Запомнить меня</span>
+            </div>
+            <div class="group">
+                <button type="submit" name="reg">Зарегестрироваться</button>
+                <span><?=$error?></span>
+            </div>
+            </form>
+    </div>
     </main>
     <footer>
       <span></span>

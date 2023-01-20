@@ -1,7 +1,7 @@
 body {
     font-family: 'Helvetica';
     margin: 0;
-    background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618350790_53-phonoteka_org-p-fon-dlya-bannera-odnotonnii-53.jpg);
+    background-image: url(https://phonoteka.org/uploads/posts/2021-05/1620306142_3-phonoteka_org-p-karta-dlya-fona-svetlaya-3.jpg);
     display: flex;
     background-attachment: fixed;
     flex-direction: column;
@@ -16,7 +16,7 @@ body {
     font-size: 50px;
     text-align: center;
     color: #fff;
-    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614285346_78-p-chernii-fon-odnotonnii-matovii-88.jpg);
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
   }
   
   footer {
@@ -26,12 +26,12 @@ body {
     color: #fff;
     width: 100%;
     height: 20px;
-    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614285346_78-p-chernii-fon-odnotonnii-matovii-88.jpg);
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
   }
 
   .auth {
   width: 500px;
-  height: 500px;
+  height: 450px;
   border: 1px solid rgb(255, 255, 255);
   margin: 100px auto;
   background: rgb(255, 255, 255);
@@ -54,7 +54,8 @@ body {
   .group {
     padding-top: 10px;
     color: rgb(0, 0, 0);
-    margin-left: 165px;
+    width: 150px;
+    margin: auto;
   }
   
   input {
@@ -78,7 +79,7 @@ body {
     color: #fff;
     margin-left: 30px;
     margin-top: 15px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
   }
 
   .btn_reg {
@@ -107,4 +108,10 @@ body {
 
   input:hover {
     background-color: #c5c5c5;
+  }
+
+  .error {
+    color: #ff0000;
+    text-align: center;
+    padding-bottom: 10px;
   }
