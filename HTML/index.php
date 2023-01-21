@@ -29,7 +29,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
-      href="https://cdn-icons-png.flaticon.com/512/1687/1687357.png"
+      href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
     <title>Maps</title>
     <link rel="stylesheet" href="/CSS/style.css" />
@@ -62,13 +62,14 @@ if (isset($_SESSION['user_id'])) {
         <div class="places">
         </div>
       </div>
-      <form action="<?php echo ($user_id == null)?'auth.php':'index.php'?>" class="account" method="post">
         <div class="accountIcon">
-          <img class="iconAuth" src="<?=$icon_path?>" alt="Иконка входа">
-        <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
-        <button class="account_btn" name="account"><?=$auth_btn_text?></button>
+          <form action="<?php echo ($user_id == null)?'auth.php':'index.php'?>" class="account" method="post">
+            <img class="iconAuth" src="<?=$icon_path?>" alt="Иконка входа">
+            <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
+            <button class="account_btn" name="account"><?=$auth_btn_text?></button>
+          </form>
+            <a href="services.php"><button class="account_btn">Услуги / Магазин</button></a>
         </div>
-      </form>
     </div>
   </main>
     <script
@@ -87,10 +88,10 @@ if (isset($_SESSION['user_id'])) {
         ");
 
         $row = mysqli_fetch_assoc($result);
-        $data = "['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."']";
+        $data = "['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
         
         while ($row = mysqli_fetch_assoc($result)) {
-          $data .= ", ['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."']";
+          $data .= ", ['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
         }
        
         

@@ -41,9 +41,13 @@ if (isset($_POST['enter'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход/Регистрация</title>
     <link rel="stylesheet" href="/CSS/auth.css" />
-    <link
+    <!-- <link
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/1687/1687357.png"
+    /> -->
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
 </head>
 <body>

@@ -65,6 +65,7 @@ function init() {
 
     showPlaces(targets)
   } else {
+    console.log(placesToShow);
     placesToShow.forEach(place => {
       placemarkes.push(new ymaps.Placemark(
         place.coordinates,
@@ -72,7 +73,11 @@ function init() {
           //балуны на карте
           balloonContentHeader: "Площадка для выгула собак",
           balloonContentBody: place.elements,
-          balloonContentFooter: place.location,
+          balloonContentFooter: place.location+`
+            <form>
+              `+place['id']+`
+            </form>
+          `,
         },
         {
           //использовать свою картинку
