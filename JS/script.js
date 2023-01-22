@@ -12,6 +12,8 @@ let outerMap;
 
 let placesToShow = [];
 
+var user_id = null;
+
 function getCenters(arr) {
   data = arr;
 }
@@ -67,17 +69,23 @@ function init() {
   } else {
     console.log(placesToShow);
     placesToShow.forEach(place => {
+      let likeButton = '';
+      if (user_id != null) {
+        likeButton = `
+        <form method="post" action="like.php" class="form-like">
+          <input type="hidden" name="area_id" value="`+place['id']+`">
+          <input type="hidden" name="like">
+          <span>Поставить лайк<button class="like" type="submit" style="background-color:#ffffff; border:none; cursor:pointer"><img style="width:20px; height:20px" src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png"></button><span>
+        </form>
+      `;
+      }
       placemarkes.push(new ymaps.Placemark(
         place.coordinates,
         {
           //балуны на карте
           balloonContentHeader: "Площадка для выгула собак",
           balloonContentBody: place.elements,
-          balloonContentFooter: place.location+`
-            <form>
-              `+place['id']+`
-            </form>
-          `,
+          balloonContentFooter: place.location + likeButton,
         },
         {
           //использовать свою картинку
@@ -149,6 +157,7 @@ function init() {
 }
 
 function decompose(strs) {
+  // console.log(strs);
   const coordinates = strs[4]
     .slice(strs[4].indexOf('[') + 1, strs[4].indexOf(']'))
     .split(',')
@@ -159,6 +168,7 @@ function decompose(strs) {
   const elements = strs[2].slice(1, -1);
 
   const place = {
+    id: strs[5],
     location: strs[0],
     area: +strs[1],
     elements,

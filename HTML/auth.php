@@ -52,7 +52,8 @@ if (isset($_POST['enter'])) {
 </head>
 <body>
     <header>
-      <span>ZOO WALKING</span>
+      <b>PETS WALKING</b>
+      <p>Здесь вы можете войти в свой аккаунт</p>
     </header>
     <main>
     
@@ -81,14 +82,12 @@ if (isset($_POST['enter'])) {
                 <div class="text">
                     <span class="text1">У вас ещё нет аккаунта?</span>
                     <div class="group">
-                        <button class="btn_reg" type="submit">Зарегестрироваться</button>
+                        <button class="btn_reg" type="submit">Зарегистрироваться</button>
                     </div>
                 </div>
             </form>
+            <a href="index.php" ><button class="exit" type="submit">На главную</button></a>
          </div>
-           
-        
-        
     </main>
     <footer>
       <span></span>

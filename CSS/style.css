@@ -15,19 +15,19 @@ body::-webkit-scrollbar {
 }
 
 .map {
-  width: 650px;
+  width: 900px;
   height: 650px;
   background-color: rgb(255, 255, 255);
   /* flex: 0 0 650px; */
   flex-shrink: 1;
-  border: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid rgb(0, 0, 0); */
   box-shadow: 4px 4px 6px #4f4f4f;
 }
 
 /* Стереть надписи api*/
-[class*='copyrights-pane'] {
+/* [class*='copyrights-pane'] {
   display: none !important;
-}
+} */
 
 /*Для изменения родительских классов*/
 /* [class*="balloon__layout"] {
@@ -56,7 +56,7 @@ header {
   padding-top: 17px;
   padding-bottom: 17px;
   width: 100%;
-  font-size: 50px;
+  font-size: 55px;
   text-align: center;
   color: #fff;
   /* background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614285346_78-p-chernii-fon-odnotonnii-matovii-88.jpg); */
@@ -79,11 +79,12 @@ footer {
   display: flex;
   /* width: 1200px; */
   height: 650px;
-  
   margin: 50px auto;
   column-gap: 30px;
   justify-content: start;
-  padding: 0px 100px;
+  /* padding: 0px 100px; */
+  padding-left: 20px;
+  padding-right: 100px;
 }
 
 .account {
@@ -116,11 +117,12 @@ footer {
 .accountIcon {
   background-color: #fff;
   width: 150px;
-  height: 170px;
+  height: 260px;
   padding-top: 20px;
   border-radius: 15px;
-  border: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid rgb(0, 0, 0); */
   box-shadow: 4px 4px 6px #4f4f4f;
+  padding-right: 5px;
 }
 
 
@@ -130,7 +132,7 @@ footer {
   width: 650px;
   row-gap: 10px;
   /* flex: 0 1 100%; */
-  border: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid rgb(0, 0, 0); */
   padding: 10px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);

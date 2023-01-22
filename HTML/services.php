@@ -5,6 +5,7 @@ session_start();
 $icon_path = '../imgs/icon_auth.png';
 $auth_btn_text = 'Вход / Регистрация';
 $user_id = null;
+$my_area = 'Мои маршруты';
 
 if (isset($_POST['out'])) {
   // echo 'out = '.$_POST['out'];
@@ -15,6 +16,7 @@ if (isset($_SESSION['user_id'])) {
   // echo 'uid = '.$_SESSION['user_id'];
   $icon_path = '../imgs/icon_acc.png';
   $auth_btn_text = 'Выход';
+  $my_area = 'Мои маршруты';
   $user_id = $_SESSION['user_id'];
 }
 
@@ -41,7 +43,7 @@ $page = 'services';
 </head>
 <body>
     <header>
-      <span>ZOO WALKING</span>
+      <b>PETS WALKING</b>
       <p class="text">В данном разделе можно воспользоваться нашими услугами или приобрести нужный вам товар</p>
     </header>
     <nav class="nav">
@@ -83,6 +85,7 @@ $page = 'services';
                     <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
                     <button class="account_btn" name="account"><?=$auth_btn_text?></button>
                 </form>
+                <?php echo (($user_id == null)?'':'<a href="like.php"><button class="account_btn">'.$my_area.'</button></a>');?>
                     <a href="index.php"><button class="account_btn">Главная страница</button></a>
             </div>
         </div>

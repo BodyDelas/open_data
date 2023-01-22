@@ -9,11 +9,19 @@ body {
     justify-content: space-between;
   }
 
+  body::-webkit-scrollbar {
+    display: none;
+}
+
+p {
+  font-size: 15px;
+}
+
   header {
     padding-top: 17px;
     padding-bottom: 17px;
     width: 100%;
-    font-size: 50px;
+    font-size: 55px;
     text-align: center;
     color: #fff;
     background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
@@ -31,7 +39,7 @@ body {
 
   .auth {
   width: 500px;
-  height: 450px;
+  height: 500px;
   border: 1px solid rgb(255, 255, 255);
   margin: 100px auto;
   background: rgb(255, 255, 255);
@@ -49,7 +57,20 @@ body {
     color: rgb(0, 0, 0);
   }
 
+ .exit {
+  border-radius: 15px;
+  border: none;
+  height: 40px;
+  width: 100px;
+  background-color: rgb(72, 72, 72);
+  color: #fff;
+  margin-left: 15px;
+  margin-top: 15px;
+ }
 
+ .exit:hover {
+  background-color: #767676;
+}
   
   .group {
     padding-top: 10px;
@@ -75,7 +96,7 @@ body {
     border: none;
     height: 40px;
     width: 100px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(72, 72, 72);
     color: #fff;
     margin-left: 30px;
     margin-top: 15px;
@@ -87,7 +108,7 @@ body {
     border: none;
     height: 40px;
     width: 135px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(72, 72, 72);
     color: #fff;
     margin-left: 15px;
     margin-top: 15px;
@@ -99,11 +120,11 @@ body {
   }
 
   .btn_reg:hover {
-    background-color: #4f4f4f;
+    background-color: #767676;
   }
 
   .btn_auth:hover {
-    background-color: #4f4f4f;
+    background-color: #767676;
   }
 
   input:hover {

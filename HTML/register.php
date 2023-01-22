@@ -66,7 +66,8 @@ if (isset($_POST['reg'])) {
 </head>
 <body>
     <header>
-      <span>ZOO WALKING</span>
+      <b>PETS WALKING</b>
+      <p>Здесь вы можете зарегестрировать свой аккаунт</p>
     </header>
     <main>
     <div class="auth">
@@ -89,10 +90,11 @@ if (isset($_POST['reg'])) {
                 <span>Запомнить меня</span>
             </div>
             <div class="group">
-                <button type="submit" name="reg">Зарегестрироваться</button>
+                <button type="submit" name="reg">Зарегистрироваться</button>
                 <span><?=$error?></span>
             </div>
             </form>
+            <a href="index.php" ><button class="exit" type="submit">На главную</button></a>
     </div>
     </main>
     <footer>

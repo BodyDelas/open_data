@@ -5,6 +5,7 @@ session_start();
 $icon_path = '../imgs/icon_auth.png';
 $auth_btn_text = 'Вход / Регистрация';
 $user_id = null;
+$my_area = 'Мои маршруты';
 
 if (isset($_POST['out'])) {
   // echo 'out = '.$_POST['out'];
@@ -15,6 +16,7 @@ if (isset($_SESSION['user_id'])) {
   // echo 'uid = '.$_SESSION['user_id'];
   $icon_path = '../imgs/icon_acc.png';
   $auth_btn_text = 'Выход';
+  $my_area = 'Мои маршруты';
   $user_id = $_SESSION['user_id'];
 }
 
@@ -36,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
   </head>
   <body>
     <header>
-      <span>ZOO WALKING</span>
+      <b>PETS WALKING</b>
       <p>Мы поможем найти подходящую площдку рядом с вами</p>
     </header>
     <main>
@@ -69,6 +71,7 @@ if (isset($_SESSION['user_id'])) {
             <button class="account_btn" name="account"><?=$auth_btn_text?></button>
           </form>
             <a href="services.php"><button class="account_btn">Услуги / Магазин</button></a>
+            <?php echo (($user_id == null)?'':'<a href="like.php"><button class="account_btn">'.$my_area.'</button></a>');?>
         </div>
     </div>
   </main>
@@ -78,31 +81,39 @@ if (isset($_SESSION['user_id'])) {
     ></script>
     <script src="/JS/script.js"></script>
 
-    <script>
-      <?php
-        include "connect_db.php";
+    
+    <?php
+      include "connect_db.php";
 
-        $result = mysqli_query($connection, "
-        select *
-        from open_data
-        ");
+      echo ($user_id != null) ? "
+      <script>
+        user_id = ".$user_id."
+      </script>
+      " : '';
 
-        $row = mysqli_fetch_assoc($result);
-        $data = "['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
-        
-        while ($row = mysqli_fetch_assoc($result)) {
-          $data .= ", ['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
-        }
-       
-        
+      $result = mysqli_query($connection, "
+      select *
+      from open_data
+      ");
 
-        echo "
+      $row = mysqli_fetch_assoc($result);
+      $data = "['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
+      
+      while ($row = mysqli_fetch_assoc($result)) {
+        $data .= ", ['".$row['location']."', '".$row['area']."', '".$row['elements']."', '".$row['lightning']."', '".$row['geodata_center']."', '".$row['id']."']";
+      }
+      
+      
+
+      echo "
+      <script>
         getCenters([".$data."]);
         ymaps.ready(init);
-        ";
-      ?>
+      </script>
+      ";
+    ?>
       
-    </script>
+    
 
     <!-- <script>
       act();
