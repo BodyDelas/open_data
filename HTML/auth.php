@@ -30,6 +30,13 @@ if (isset($_POST['enter'])) {
     $error = '<div class="error group">Неверный логин или пароль</div>';
 }
 
+$_SESSION['theme'] = (isset($_SESSION['theme']))?$_SESSION['theme']:0;
+
+if (isset($_POST['change_theme'])) {
+  $_SESSION['theme'] = !$_SESSION['theme'];
+}
+$theme = $_SESSION['theme'];
+
 ?>
 
 
@@ -40,7 +47,7 @@ if (isset($_POST['enter'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход/Регистрация</title>
-    <link rel="stylesheet" href="/CSS/auth.css" />
+    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/auth.css':'/CSS/auth-dark.css'?>" />
     <!-- <link
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/1687/1687357.png"

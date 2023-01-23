@@ -75,10 +75,11 @@ function init() {
         <form method="post" action="like.php" class="form-like">
           <input type="hidden" name="area_id" value="`+place['id']+`">
           <input type="hidden" name="like">
-          <span>Поставить лайк<button class="like" type="submit" style="background-color:#ffffff; border:none; cursor:pointer"><img style="width:20px; height:20px" src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png"></button><span>
+          <button class="like" type="submit">Нравится</button>
         </form>
       `;
       }
+     // <img style="width:20px; height:20px" src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png"></img>
       placemarkes.push(new ymaps.Placemark(
         place.coordinates,
         {

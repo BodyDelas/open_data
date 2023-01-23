@@ -1,7 +1,7 @@
 body {
     font-family: 'Helvetica';
     margin: 0;
-    background-image: url(https://phonoteka.org/uploads/posts/2021-05/1620306142_3-phonoteka_org-p-karta-dlya-fona-svetlaya-3.jpg);
+    background-image: url(/imgs/dark-phone.png);
     display: flex;
     background-attachment: fixed;
     flex-direction: column;
@@ -20,29 +20,30 @@ header {
     width: 100%;
     font-size: 55px;
     text-align: center;
-    color: rgb(0, 0, 0);
-    background-image: url('/imgs/header.png');
+    color: #fff;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
 }
 
 footer {
     padding-top: 45px;
     text-align: center;
     bottom: 0;
-    color: rgb(0, 0, 0);
+    color: #fff;
     width: 100%;
     height: 20px;
-    background-image: url('/imgs/header.png');
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
 }
 
 .container {
     width: 700px;
-    /* height: 1700px; */
-    border: 1px solid rgb(255, 255, 255);
+    /* height: 700px; */
+    /* border: 1px solid rgb(255, 255, 255); */
     /* margin: 8px auto; */
-    background: rgb(255, 255, 255);
+    background-color: rgb(101, 101, 101);
     border-radius: 20px;
-    box-shadow: 4px 4px 6px #4f4f4f;
+    box-shadow: 4px 4px 6px #888888;
     margin-bottom: 20px;
+    color:#fff;
 }
 
 .nav {
@@ -50,9 +51,9 @@ footer {
     display: flex;
     width: 250px;
     height: 50px;
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(255, 255, 255); */
     margin:  20px auto;
-    background: rgb(255, 255, 255);
+    background: rgb(101, 101, 101);
     border-radius: 20px;
     box-shadow: 4px 4px 6px #4f4f4f;
     flex-direction: row;
@@ -70,20 +71,23 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #d4d4d4;
+    background-color: #8b8b8b;
     width: 90px;
     height: 35px;
     border-radius: 15px;
+    color: #fff;
 }
 
 .nav2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #d4d4d4;
+    background-color: #8b8b8b;
+    /* box-shadow: 0px 0px 10px #c2c2c2; */
     width: 90px;
     height: 35px;
     border-radius: 15px;
+    color:#fff;
 }
 
 .link {
@@ -118,11 +122,11 @@ footer {
 .block1 {
     margin: 20px;
     /* border: 2px solid black; */
-    box-shadow: 0px 0px 10px #565656;
+    box-shadow: 0px 0px 10px #888888;
     border-radius: 15px;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
 }
 
 .block1-1 {
@@ -130,7 +134,7 @@ footer {
     border-radius: 15px;
     text-align: center;
     align-self: center;
-    border: 1px solid #1c1c1c
+    border: 1px solid #a4a4a4
 }
 
 .nomer {
@@ -153,7 +157,7 @@ footer {
     height: 40px;
     margin-top: 10px;
     border-radius: 15px;
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(198, 198, 198);
     align-items: center;
     border: none;
     color: rgb(0, 0, 0);
@@ -161,19 +165,19 @@ footer {
 }
   
 .account_btn:hover {
-    background-color: #909090;
+    background-color: #939393;
 }
   
 .accountIcon {
-    background-color: #fff;
+    background-color: #717171;
     width: 150px;
     height: 320px;
     padding-top: 20px;
     border-radius: 15px;
     /* border: 2px solid rgb(0, 0, 0); */
-    box-shadow: 4px 4px 6px #4f4f4f;
-    
+    box-shadow: 4px 4px 6px #888888;
 }
+
 
 .container-wrap {
     display: flex;
@@ -197,10 +201,10 @@ footer {
     border-radius: 15px;
     background-color: rgb(255, 255, 255);
     align-items: center;
-    border: 1px solid #b6b6b6;
+    border: 0px solid #b6b6b6;
+    box-shadow: 0px 0px 8px #cdcdcd;
     color: rgb(0, 0, 0);
     margin-left: 39px;
     padding-bottom: 2px;
-    box-shadow: 0px 0px 8px #565656;;
-
 }
+

@@ -5,12 +5,8 @@ body {
     display: flex;
     background-attachment: fixed;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: space-between;
-}
-
-body::-webkit-scrollbar {
-    display: none;
 }
 
 p {
@@ -23,18 +19,19 @@ header {
     width: 100%;
     font-size: 55px;
     text-align: center;
-    color: #fff;
-    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+    color: rgb(0, 0, 0);
+    background-image: url('/imgs/header.png');
+    /* background-color: #949494; */
 }
 
 footer {
     padding-top: 45px;
     text-align: center;
     bottom: 0;
-    color: #fff;
+    color: rgb(37, 37, 37);
     width: 100%;
     height: 20px;
-    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+    background-image: url('/imgs/header.png');
 }
 
 .container {
@@ -49,7 +46,7 @@ footer {
 }
 
 .nav {
-    padding: 5px;
+    padding: 1px;
     display: flex;
     width: 250px;
     height: 50px;
@@ -156,21 +153,21 @@ footer {
     height: 40px;
     margin-top: 10px;
     border-radius: 15px;
-    background-color: rgb(72, 72, 72);
+    background-color: rgb(192, 192, 192);
     align-items: center;
     border: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-left: 5px;
 }
   
 .account_btn:hover {
-    background-color: #767676;
+    background-color: #909090;
 }
   
 .accountIcon {
     background-color: #fff;
     width: 150px;
-    height: 260px;
+    height: 320px;
     padding-top: 20px;
     border-radius: 15px;
     /* border: 2px solid rgb(0, 0, 0); */
@@ -193,3 +190,17 @@ footer {
     margin-left: 100px;
 }
 
+.theme {
+    width: 70px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    border: 1px solid #b6b6b6;
+    color: rgb(0, 0, 0);
+    margin-left: 39px;
+    padding-bottom: 2px;
+    box-shadow: 0px 0px 8px #565656;;
+
+}

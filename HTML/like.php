@@ -7,6 +7,7 @@ session_start();
 $icon_path = '../imgs/icon_auth.png';
 $auth_btn_text = 'Вход / Регистрация';
 $user_id = null;
+$my_area = 'Мои маршруты';
 
 if (isset($_POST['out'])) {
   // echo 'out = '.$_POST['out'];
@@ -17,6 +18,7 @@ if (isset($_SESSION['user_id'])) {
   // echo 'uid = '.$_SESSION['user_id'];
   $icon_path = '../imgs/icon_acc.png';
   $auth_btn_text = 'Выход';
+  $my_area = 'Мои маршруты';
   $user_id = $_SESSION['user_id'];
   // echo 'user_id = '.$user_id.'<br>';
 }
@@ -85,16 +87,13 @@ $theme = $_SESSION['theme'];
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
-    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/like.css':'/CSS/asd.css'?>" />
+    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/like.css':'/CSS/like-dark.css'?>" />
 </head>
 <body>
     <header>
       <b>PETS WALKING</b>
       <p class="text">В данном разделе вы можете увидеть понравившиеся вам площадки</p>
     </header>
-    <form method="post">
-      <button name="change_theme">qwe</button>
-    </form>
     <div class="container-wrap">
         <div class="left"></div>
         <div class="container">
@@ -108,12 +107,14 @@ $theme = $_SESSION['theme'];
                     <button class="account_btn" name="account"><?=$auth_btn_text?></button>
                 </form>
                 <a href="services.php"><button class="account_btn">Услуги / Магазин</button></a>
-                    <a href="index.php"><button class="account_btn">Главная страница</button></a>
+                <?php echo (($user_id == null)?'':'<a href="like.php"><button class="account_btn" style="background-color:#909090; border-radius:15px">'.$my_area.'</button></a>');?>
+                    <a href="index.php"><button class="account_btn">Основная страница</button></a>
+                <form method="post">
+                    <button name="change_theme" class="theme">Сменить тему</button>
+                </form>
             </div>
         </div>
-    </div>
-    
-   
+    </div>  
     <footer>
       <span></span>
     </footer>

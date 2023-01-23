@@ -1,0 +1,224 @@
+body {
+    font-family: 'Helvetica';
+    margin: 0;
+    /* background-image: url(https://phonoteka.org/uploads/posts/2021-04/1618350790_53-phonoteka_org-p-fon-dlya-bannera-odnotonnii-53.jpg);*/
+    background-image: url(/imgs/dark-phone.png); 
+    display: flex;
+    background-attachment: fixed;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  
+  .map {
+    width: 900px;
+    height: 650px;
+    background-color: rgb(255, 255, 255);
+    /* flex: 0 0 650px; */
+    flex-shrink: 1;
+    /* border: 2px solid rgb(0, 0, 0); */
+    box-shadow: 4px 4px 6px #888888;
+  }
+
+  
+  /* Стереть надписи api*/
+  /* [class*='copyrights-pane'] {
+    display: none !important;
+  } */
+
+   [class*='ground-pane'] {
+    filter: grayscale(1)
+  } 
+  
+  /*Для изменения родительских классов*/
+  /* [class*="balloon__layout"] {
+    border-radius: 10px;
+    outline: none;
+  } */
+  
+  /*Балуны на карте*/
+  /* [class*="balloon"] {
+    box-shadow: none;
+    width: 40px;
+    height: 40px;
+  } */
+  
+  /*Контейнер карты*/
+  [class*='map'] {
+    border-radius: 20px;
+  }
+  
+  /*Панель иконок*/
+  [class*='route-panel-types__type_selected'] {
+    background-color: #fff;
+  }
+  
+  header {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    width: 100%;
+    font-size: 55px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614285346_78-p-chernii-fon-odnotonnii-matovii-88.jpg); */
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+  }
+  
+  footer {
+    justify-self: flex-end;
+    align-self: flex-end;
+    padding-top: 45px;
+    text-align: center;
+    bottom: 0;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 60px;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+  }
+  
+  .container {
+    display: flex;
+    /* width: 1200px; */
+    height: 650px;
+    margin: 50px auto;
+    column-gap: 30px;
+    justify-content: start;
+    /* padding: 0px 100px; */
+    padding-left: 20px;
+    padding-right: 100px;
+    color: #fff;
+  }
+  
+  .account {
+    margin-left: auto;
+    justify-self: flex-end;
+  }
+  
+  .iconAuth {
+    border-radius: 100px;
+    width: 50px;
+    margin-left: 50px;
+  }
+  
+  .account_btn {
+    width: 140px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(198, 198, 198);
+    align-items: center;
+    border: none;
+    color: rgb(0, 0, 0);
+    margin-left: 5px;
+  }
+  
+  .account_btn:hover {
+    background-color: #939393;
+  }
+  
+  .accountIcon {
+    background-color: #717171;
+    width: 150px;
+    height: 320px;
+    padding-top: 20px;
+    border-radius: 15px;
+    /* border: 2px solid rgb(0, 0, 0); */
+    box-shadow: 4px 4px 6px #888888;
+    padding-right: 5px;
+  }
+  
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    row-gap: 10px;
+    /* flex: 0 1 100%; */
+    /* border: 2px solid rgb(0, 0, 0); */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(101, 101, 101);
+    box-shadow: 4px 4px 6px #888888;
+  }
+  
+  .has-lightning {
+    color: black;
+  }
+  
+  #areaSelect,
+  #elementsSelect {
+    width: 200px;
+    background-color: rgb(121, 120, 120);
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid #fff;
+  }
+  
+  .places__title {
+    margin: 20px 0 10px 0;
+  }
+  
+  .places {
+    margin: 0;
+    overflow-y: scroll;
+  }
+  
+  
+  .place {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .place:hover {
+    transition: all 0.3 ease;
+    background-color: rgb(215, 215, 215);
+  }
+  
+  p {
+    font-size: 15px;
+  }
+  
+  /* @media (max-width: 700px) {
+    .container {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 1230px) {
+  
+  } */
+  
+  .like {
+    width: 70px;
+      height: 30px;
+      margin-top: 10px;
+      border-radius: 15px;
+      background-color: rgb(100, 100, 100);
+      align-items: center;
+      border: none;
+      color: rgb(255, 255, 255);
+    cursor:pointer"
+    
+  }
+  
+  .like:hover {
+    background-color: #a3a3a3;
+  }
+  
+  .theme {
+    width: 70px;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    border: 0px solid #b6b6b6;
+    color: rgb(0, 0, 0);
+    margin-left: 39px;
+    padding-bottom: 2px;
+    box-shadow: 0px 0px 8px #cdcdcd;
+  
+  }

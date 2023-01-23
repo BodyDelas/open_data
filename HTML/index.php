@@ -20,6 +20,13 @@ if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
 }
 
+$_SESSION['theme'] = (isset($_SESSION['theme']))?$_SESSION['theme']:0;
+
+if (isset($_POST['change_theme'])) {
+  $_SESSION['theme'] = !$_SESSION['theme'];
+}
+$theme = $_SESSION['theme'];
+
 // echo $_SESSION['user_id'].'<br>';
 
 ?>
@@ -34,12 +41,12 @@ if (isset($_SESSION['user_id'])) {
       href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
     <title>Maps</title>
-    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/style.css':'/CSS/style-dark.css'?>" />
   </head>
   <body>
     <header>
       <b>PETS WALKING</b>
-      <p>Мы поможем найти подходящую площдку рядом с вами</p>
+      <p>Мы поможем найти подходящую площадку рядом с вами</p>
     </header>
     <main>
     <div class="container">
@@ -72,6 +79,10 @@ if (isset($_SESSION['user_id'])) {
           </form>
             <a href="services.php"><button class="account_btn">Услуги / Магазин</button></a>
             <?php echo (($user_id == null)?'':'<a href="like.php"><button class="account_btn">'.$my_area.'</button></a>');?>
+            <a href="index.php"><button class="account_btn" style="background-color:#808080; border-radius:15px">Основная страница</button></a>
+              <form method="post">
+                  <button name="change_theme" class="theme">Сменить тему</button>
+              </form>
         </div>
     </div>
   </main>
@@ -121,7 +132,8 @@ if (isset($_SESSION['user_id'])) {
     </script> -->
 
     <footer>
-      <span></span>
+      <span>Информация в приложении взята с открытых данных Москвы: https://data.mos.ru</span>
     </footer>
   </body>
 </html>
+      

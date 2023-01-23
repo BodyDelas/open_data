@@ -1,7 +1,7 @@
 body {
     font-family: 'Helvetica';
     margin: 0;
-    background-image: url(https://phonoteka.org/uploads/posts/2021-05/1620306142_3-phonoteka_org-p-karta-dlya-fona-svetlaya-3.jpg);
+    background-image: url(/imgs/dark-phone.png);
     display: flex;
     background-attachment: fixed;
     flex-direction: column;
@@ -20,18 +20,18 @@ header {
     width: 100%;
     font-size: 55px;
     text-align: center;
-    color: rgb(0, 0, 0);
-    background-image: url('/imgs/header.png');
+    color: #fff;
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
 }
 
 footer {
     padding-top: 45px;
     text-align: center;
     bottom: 0;
-    color: rgb(37, 37, 37);
+    color: #fff;
     width: 100%;
     height: 20px;
-    background-image: url('/imgs/header.png');
+    background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
 }
 
 .text{
@@ -41,11 +41,11 @@ footer {
 .container {
     width: 700px;
     /* height: 700px; */
-    border: 1px solid rgb(255, 255, 255);
+    /* border: 1px solid rgb(71, 71, 71); */
     /* margin: 8px auto; */
-    background: rgb(255, 255, 255);
+    background-color:  rgb(101, 101, 101);
     border-radius: 20px;
-    box-shadow: 4px 4px 6px #4f4f4f;
+    box-shadow: 4px 4px 6px #888888;
     margin-bottom: 20px;
     padding: 10px;
 }
@@ -66,7 +66,7 @@ footer {
     height: 40px;
     margin-top: 10px;
     border-radius: 15px;
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(198, 198, 198);
     align-items: center;
     border: none;
     color: rgb(0, 0, 0);
@@ -74,17 +74,17 @@ footer {
 }
   
 .account_btn:hover {
-    background-color: #909090;
+    background-color: #939393;
 }
   
 .accountIcon {
-    background-color: #fff;
+    background-color: #717171;
     width: 150px;
     height: 320px;
     padding-top: 20px;
     border-radius: 15px;
     /* border: 2px solid rgb(0, 0, 0); */
-    box-shadow: 4px 4px 6px #4f4f4f;
+    box-shadow: 4px 4px 6px #888888;
 }
 
 
@@ -105,9 +105,10 @@ footer {
 
 .block {
     padding: 10px;
-    box-shadow: 0px 0px 10px #565656;
+    box-shadow: 0px 0px 4px #888888;
     border-radius: 10px;
     margin-top: 5px;
+    color:#fff;
     /* border: 1px solid #4f4f4f; */
 }
 
@@ -116,7 +117,7 @@ footer {
     height: 30px;
     margin-top: 10px;
     border-radius: 15px;
-    background-color: rgb(192, 192, 192);
+    background-color: rgb(255, 255, 255);
     align-items: center;
     border: none;
     color: rgb(0, 0, 0);
@@ -124,7 +125,7 @@ footer {
 }
 
 .buttonDelete:hover {
-    background-color: #909090;
+    background-color: #939393;
 }
 
 .theme {
@@ -135,9 +136,8 @@ footer {
     background-color: rgb(255, 255, 255);
     align-items: center;
     border: 1px solid #b6b6b6;
+    box-shadow: 0px 0px 8px #cdcdcd;
     color: rgb(0, 0, 0);
     margin-left: 39px;
     padding-bottom: 2px;
-    box-shadow: 0px 0px 8px #565656;;
-
 }

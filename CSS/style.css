@@ -10,10 +10,6 @@ body {
   justify-content: space-between;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
 .map {
   width: 900px;
   height: 650px;
@@ -58,9 +54,9 @@ header {
   width: 100%;
   font-size: 55px;
   text-align: center;
-  color: #fff;
+  color: rgb(0, 0, 0);
   /* background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614285346_78-p-chernii-fon-odnotonnii-matovii-88.jpg); */
-  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+  background-image: url('/imgs/header.png');
 }
 
 footer {
@@ -69,10 +65,10 @@ footer {
   padding-top: 45px;
   text-align: center;
   bottom: 0;
-  color: #fff;
+  color: rgb(0, 0, 0);
   width: 100%;
   height: 60px;
-  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1614411844_31-p-temnii-fon-metall-55.jpg);
+  background-image: url('/imgs/header.png');
 }
 
 .container {
@@ -103,21 +99,21 @@ footer {
   height: 40px;
   margin-top: 10px;
   border-radius: 15px;
-  background-color: rgb(72, 72, 72);
+  background-color: rgb(192, 192, 192);
   align-items: center;
   border: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   margin-left: 5px;
 }
 
 .account_btn:hover {
-  background-color: #767676;
+  background-color: #909090;
 }
 
 .accountIcon {
   background-color: #fff;
   width: 150px;
-  height: 260px;
+  height: 320px;
   padding-top: 20px;
   border-radius: 15px;
   /* border: 2px solid rgb(0, 0, 0); */
@@ -146,6 +142,7 @@ footer {
 #areaSelect,
 #elementsSelect {
   width: 200px;
+  border-radius: 15px;
 }
 
 .places__title {
@@ -157,9 +154,6 @@ footer {
   overflow-y: scroll;
 }
 
-.places::-webkit-scrollbar {
-  display: none;
-}
 
 .place {
   margin: 0 0 10px 0;
@@ -187,3 +181,35 @@ p {
 @media (max-width: 1230px) {
 
 } */
+
+.like {
+  width: 70px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: rgb(100, 100, 100);
+    align-items: center;
+    border: none;
+    color: rgb(255, 255, 255);
+  cursor:pointer"
+  
+}
+
+.like:hover {
+  background-color: #a3a3a3;
+}
+
+.theme {
+  width: 70px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border: 1px solid #b6b6b6;
+  color: rgb(0, 0, 0);
+  margin-left: 39px;
+  padding-bottom: 2px;
+  box-shadow: 0px 0px 8px #565656;;
+
+}

@@ -24,7 +24,12 @@ if (isset($_SESSION['user_id'])) {
 
 $page = 'services';
 
+$_SESSION['theme'] = (isset($_SESSION['theme']))?$_SESSION['theme']:0;
 
+if (isset($_POST['change_theme'])) {
+  $_SESSION['theme'] = !$_SESSION['theme'];
+}
+$theme = $_SESSION['theme'];
 
 ?>
 
@@ -39,7 +44,7 @@ $page = 'services';
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
-    <link rel="stylesheet" href="/CSS/services.css" />
+    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/services.css':'/CSS/services-dark.css'?>" />
 </head>
 <body>
     <header>
@@ -85,8 +90,12 @@ $page = 'services';
                     <?php echo ($user_id != null)?'<input type="hidden" name="out">':''?>
                     <button class="account_btn" name="account"><?=$auth_btn_text?></button>
                 </form>
+                <a href="market.php"><button class="account_btn" style="background-color:#808080; border-radius:15px">Услуги / Магазин</button></a>
                 <?php echo (($user_id == null)?'':'<a href="like.php"><button class="account_btn">'.$my_area.'</button></a>');?>
-                    <a href="index.php"><button class="account_btn">Главная страница</button></a>
+                    <a href="index.php"><button class="account_btn">Основная страница</button></a>
+                <form method="post">
+                    <button name="change_theme" class="theme">Сменить тему</button>
+                </form>
             </div>
         </div>
     </div>

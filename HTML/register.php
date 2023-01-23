@@ -48,7 +48,12 @@ if (isset($_POST['reg'])) {
 
 }
 
+$_SESSION['theme'] = (isset($_SESSION['theme']))?$_SESSION['theme']:0;
 
+if (isset($_POST['change_theme'])) {
+  $_SESSION['theme'] = !$_SESSION['theme'];
+}
+$theme = $_SESSION['theme'];
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +67,7 @@ if (isset($_POST['reg'])) {
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/7784/7784436.png"
     />
-    <link rel="stylesheet" href="/CSS/register.css" />
+    <link rel="stylesheet" href="<?php echo ($theme==0)?'/CSS/register.css':'/CSS/register-dark.css'?>" />
 </head>
 <body>
     <header>
