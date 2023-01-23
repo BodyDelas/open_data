@@ -97,7 +97,7 @@ $theme = $_SESSION['theme'];
          </div>
     </main>
     <footer>
-      <span></span>
+        <span class="footer">Информация в приложении взята с открытых данных Москвы: https://data.mos.ru</span>
     </footer>
 </body>
 </html>

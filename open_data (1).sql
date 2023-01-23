@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 21 2022 г., 20:45
+-- Время создания: Янв 23 2023 г., 15:29
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.1.33
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- База данных: `open_data`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `my_area`
+--
+
+CREATE TABLE `my_area` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `area_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `my_area`
+--
+
+INSERT INTO `my_area` (`id`, `user_id`, `area_id`) VALUES
+(15, 42, 105),
+(27, 42, 105),
+(28, 42, 73),
+(29, 42, 73),
+(30, 42, 105),
+(31, 42, 125),
+(32, 42, 105);
 
 -- --------------------------------------------------------
 
@@ -177,9 +202,39 @@ INSERT INTO `open_data` (`id`, `location`, `area`, `elements`, `lightning`, `wor
 (132, 'Российская Федерация, город Москва, внутригородская территория муниципальный округ Ростокино, улица Докукина, дом 7', '200', '[балансир для собак, барьер кольца, барьер одинарный, бум для собак, информационный стенд, урна]', 'нет', 'DayOfWeek:понедельник\r\nHours:круглосуточно\r\n\r\nDayOfWeek:вторник\r\nHours:круглосуточно\r\n\r\nDayOfWeek:среда\r\nHours:круглосуточно\r\n\r\nDayOfWeek:четверг\r\nHours:круглосуточно\r\n\r\nDayOfWeek:пятница\r\nHours:круглосуточно\r\n\r\nDayOfWeek:суббота\r\nHours:круглосуточно\r\n\r\nDayOfWeek:воскресенье\r\nHours:круглосуточно\r\n\r\n', '{\"coordinates\":[37.651378,55.838134],\"type\":\"Point\"}'),
 (133, 'Российская Федерация, город Москва, внутригородская территория муниципальный округ Отрадное, Каргопольская улица, дом 6', '554', '[барьер двойной, барьер змейка, барьер кольца, барьер одинарный, бум для собак, информационный стенд, туннель (нора), скамья для собаководов, трап, урна]', 'нет', 'DayOfWeek:понедельник\r\nHours:круглосуточно\r\n\r\nDayOfWeek:вторник\r\nHours:круглосуточно\r\n\r\nDayOfWeek:среда\r\nHours:круглосуточно\r\n\r\nDayOfWeek:четверг\r\nHours:круглосуточно\r\n\r\nDayOfWeek:пятница\r\nHours:круглосуточно\r\n\r\nDayOfWeek:суббота\r\nHours:круглосуточно\r\n\r\nDayOfWeek:воскресенье\r\nHours:круглосуточно\r\n\r\n', '{\"coordinates\":[37.590158,55.860868],\"type\":\"Point\"}');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `login` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hash` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `login`, `hash`) VALUES
+(1, 'qwe', '76d80224611fc919a5d54f0ff9fba446'),
+(41, 'mmm', 'c4efd5020cb49b9d3257ffa0fbccc0ae'),
+(42, 'aaa', '47bce5c74f589f4867dbd57e9ca9f808'),
+(43, 'bogstrij83@mail.ru', '638e85a279c3ada3a06308a06c55f4c9');
+
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `my_area`
+--
+ALTER TABLE `my_area`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `area_id` (`area_id`);
 
 --
 -- Индексы таблицы `open_data`
@@ -188,14 +243,43 @@ ALTER TABLE `open_data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `my_area`
+--
+ALTER TABLE `my_area`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT для таблицы `open_data`
 --
 ALTER TABLE `open_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `my_area`
+--
+ALTER TABLE `my_area`
+  ADD CONSTRAINT `my_area_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `my_area_ibfk_2` FOREIGN KEY (`area_id`) REFERENCES `open_data` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

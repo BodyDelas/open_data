@@ -107,8 +107,8 @@ function init() {
     map.geoObjects.add(placemarkes[i]);
   }
 
-  location
-    .then(function (res) {
+
+  location.then(function (res) {
       //передаем 0 элемент текста
       let locationText = res.geoObjects.get(0).properties.get("text");
       myLocation = res.geoObjects.get(0).geometry.getCoordinates();
@@ -153,8 +153,7 @@ function init() {
         to: placemarkes[minPlaceIdx].properties._data.balloonContentFooter, //`${city}, Большая Почтовая улица 40`, // передать координаты
       });
       //изменение вов ремя пользования транспорта
-    })
-    .catch((error) => console.log(error));
+    }).catch((error) => console.log(error));
 }
 
 function decompose(strs) {
@@ -238,7 +237,7 @@ function showPlaces(list) {
 
       item.classList.add('place');
       item.innerHTML =
-        `Адрес: ${place.location}<br>Есть освещение: ${place.hasLightning}` +
+        `Адрес: <b>${place.location}</b><br>Есть освещение: ${place.hasLightning}` +
         `<br>Размер площадки: ${place.area} м2<br>Есть на площадке: ${place.elements}`;
       
       item.addEventListener('click', event => {

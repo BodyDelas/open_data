@@ -174,7 +174,7 @@ body {
   
   .place:hover {
     transition: all 0.3 ease;
-    background-color: rgb(215, 215, 215);
+    background-color: rgb(159, 159, 159);
   }
   
   p {
@@ -200,7 +200,7 @@ body {
       align-items: center;
       border: none;
       color: rgb(255, 255, 255);
-    cursor:pointer"
+    cursor:pointer;
     
   }
   

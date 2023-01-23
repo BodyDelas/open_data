@@ -90,7 +90,7 @@ $theme = $_SESSION['theme'];
       src="https://api-maps.yandex.ru/2.1/?apikey=5eca22fe-0a55-452a-8d5e-e64f4be09851&lang=ru_RU"
       type="text/javascript"
     ></script>
-    <script src="/JS/script.js"></script>
+    <script src="JS/script.js"></script>
 
     
     <?php
@@ -132,8 +132,7 @@ $theme = $_SESSION['theme'];
     </script> -->
 
     <footer>
-      <span>Информация в приложении взята с открытых данных Москвы: https://data.mos.ru</span>
+      <span class="footer">Информация в приложении взята с открытых данных Москвы: https://data.mos.ru</span>
     </footer>
   </body>
 </html>
-      
