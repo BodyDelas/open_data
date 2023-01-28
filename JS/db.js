@@ -1,8 +1,5 @@
 function act() {
-  console.log(4);
   const mysql = require("mysql");
-  // const config = require("process");
-  console.log(6);
 
   //конфигурация
   const conn = mysql.createConnection({

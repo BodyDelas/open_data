@@ -41,6 +41,7 @@ function init() {
 
   if (placesToShow.length === 0) {
     data.forEach(row => {
+      console.log(row);
       const decomposedRow = decompose(row);
 
       placemarkes.push(new ymaps.Placemark(
@@ -108,7 +109,7 @@ function init() {
   }
 
 
-  location.then(function (res) {
+  location.then(function (res)  {
       //передаем 0 элемент текста
       let locationText = res.geoObjects.get(0).properties.get("text");
       myLocation = res.geoObjects.get(0).geometry.getCoordinates();
@@ -195,7 +196,7 @@ elementsSelect.addEventListener('change', (event) => {
 });
 
 function showPlaces(list) {
-  placesList.innerHTML = '';
+  placesList.innerHTML = ''; 
 
   placesToShow = list.filter((place) => {
     if (hasLightningCheckbox.checked && place.hasLightning === 'нет') {
